@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  runtime:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    volumes:
+      - .:/src
+    environment:
+      - PROCESS_CMD=${PROCESS_CMD}
+      - PROCESS_ARGS=${PROCESS_ARGS}

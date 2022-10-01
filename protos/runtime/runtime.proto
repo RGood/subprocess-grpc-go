@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package runtime;
+
+option go_package = "github.com/RGood/subprocesses-go/internal/generated/runtime";
+
+import "google/protobuf/empty.proto";
+
+message ReadyMessage {
+    string subprocessId = 1; 
+}
+
+service Runtime {
+    rpc Ready(ReadyMessage) returns(google.protobuf.Empty);
+}

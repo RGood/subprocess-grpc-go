@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package echo;
+
+option go_package = "github.com/RGood/subprocesses-go/internal/generated/echo";
+
+message Message {
+    string text = 1; 
+}
+
+service EchoService {
+    rpc Echo(Message) returns(Message);
+}

@@ -8,4 +8,3 @@ services:
       - .:/src
     environment:
       - PROCESS_CMD=${PROCESS_CMD}
-      - PROCESS_ARGS=${PROCESS_ARGS}

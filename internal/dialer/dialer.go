@@ -1,15 +1,15 @@
 package dialer
 
 import (
-	"fmt"
 	"net"
 	"time"
 
+	"github.com/RGood/subprocesses-go/internal/helpers"
 	"google.golang.org/grpc"
 )
 
 func Dial(processID string) (*grpc.ClientConn, error) {
-	addr := fmt.Sprintf("/tmp/%s.sock", processID)
+	addr := helpers.CreateSocketAddress(processID)
 	return grpc.Dial(addr, grpc.WithInsecure(), grpc.WithDialer(dialer))
 }
 
